@@ -19,7 +19,7 @@
             NSArray *list = (NSArray *)json;
             __block NSString *fullString=@"";
             [list enumerateObjectsUsingBlock:^(NSDictionary *obj, NSUInteger idx, BOOL *stop) {
-                fullString = [NSString stringWithFormat:@"%@\"%@\" = \"%@\"\n",fullString, obj[@"ResourceKey"],obj [@"ResourceValue"]];
+                fullString = [NSString stringWithFormat:@"%@\"%@\" = \"%@\";\n",fullString, obj[@"ResourceKey"],obj [@"ResourceValue"]];
             }];
             if (jsonError) {
                 handler(nil,jsonError);
